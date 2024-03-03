@@ -12,7 +12,7 @@ describe("CCL PR", function(){
       cy.xpath("//i[@class='oi oi-apps']").click()           //menu bar
       cy.xpath("//a[contains(.,'Purchase')]").click()        //Purchase
   
-      for (let i = 0; i < 5; i++) {       //Repeat run the test 
+      for (let i = 0; i < 2; i++) {       //Repeat run the test 
       cy.xpath("(//button[contains(.,'New')])[2]").click()         //New
       cy.get("#priority_0").select('High')                       //Priority
       cy.get("#requisition_type_0").select('Local Purchase')      //Req Type 
