@@ -15,13 +15,15 @@ describe('Test suit', ()=> {
    it('PI', ()=>{
        cy.xpath("//a[contains(.,'Proforma Invoice')]").click()
        cy.wait(2000)
-       cy.xpath("//button[contains(.,'New')]").click()         //New 
+       cy.xpath("(//button[contains(.,'New')])[2]").click()         //New 
        cy.wait(1000)
-       cy.get("#partner_id").type('A & Brothers').type('{Enter}')         //Vendor select 
+       cy.get("#name_0").type("PI/00001/TEST/01")     // Rename 
        cy.wait(1000)
-       cy.get("#purchase_order_id").type('FPO/00')
+       cy.get("#partner_id_0").type('DreamIT Ltd').type('{Enter}')         //Vendor select 
        cy.wait(1000)
-       cy.get("#purchase_order_id").type('{Enter}')   //FPO select
+       cy.get("#purchase_order_id_0").type('FPO/00')
+       cy.wait(1000)
+       cy.get("#purchase_order_id_0").type('{Enter}')   //FPO select
        cy.wait(2000)
        cy.xpath("//span[contains(.,'Confirm')]").click()        
        cy.wait(1000)
@@ -34,11 +36,13 @@ describe('Test suit', ()=> {
        cy.wait(1000)
        cy.xpath("//a[contains(.,'LC/TT/LCAF')]").click()
        cy.wait(2000)
-       cy.xpath("//button[contains(.,'New')]").click()         //New 
+       cy.xpath("(//button[contains(.,'New')])[2]").click()         //New 
        cy.wait(1000)
-       cy.get("#partner_id").type('A & Brothers').type('{Enter}')         //Vendor select 
+       cy.get("#name_0").type("LC/00001/TEST/01")     // Rename 
        cy.wait(1000)
-       cy.get("#proforma_invoice_id").type('PI/00').type('{Enter}')   //PI select
+       cy.get("#partner_id_0").type('DreamIT Ltd').type('{Enter}')         //Vendor select 
+       cy.wait(1000)
+       cy.get("#proforma_invoice_id_0").type('PI/00').type('{Enter}')   //PI select
        cy.wait(1000)
        cy.xpath("//span[contains(.,'Confirm')]").click()        
        cy.wait(1000)
@@ -51,9 +55,11 @@ describe('Test suit', ()=> {
        cy.wait(1000)
        cy.xpath("//a[contains(.,'Commercial Invoice')]").click()
        cy.wait(2000)
-       cy.xpath("//button[contains(.,'New')]").click()         //New 
+       cy.xpath("(//button[contains(.,'New')])[2]").click()         //New 
        cy.wait(1000)
-       cy.get("#lc_details_id").type('LC/00').type('{Enter}')   //LC select
+       cy.get("#name_0").type("LC/00001/TEST/01")     // Rename 
+       cy.wait(1000)
+       cy.get("#lc_details_id_0").type('LC/00').type('{Enter}')   //LC select
        cy.wait(1000)
        cy.xpath("//span[contains(.,'Confirm')]").click()        
        cy.wait(1000)
