@@ -10,7 +10,8 @@ describe("Quotation", function(){
         cy.wait(1000)
         cy.xpath("//i[@class='oi oi-apps']").click()           //menu bar
         cy.xpath("//a[contains(.,'Purchase')]").click()        //Purchase
-        cy.xpath("//span[contains(.,'Orders')]").click()
+        cy.wait(1000)
+        cy.xpath("//span[contains(.,'Orders)]").click()
         cy.wait(1000)
         cy.xpath("//a[contains(.,'Request For Quotation')]").click()  //Purchase
         cy.wait(1000)
