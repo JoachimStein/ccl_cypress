@@ -93,7 +93,7 @@ describe("mrr(qc)_testsuite", function(){
         cy.wait(1000)
         cy.get("#body_0").type("Automated Testing: PR>RFQ>Q>NS(RFQ)>DPO>MRR(QC)")
         cy.wait(1000)
-        cy.get("table[class='o_list_table table table-sm table-hover position-relative mb-0 o_list_table_ungrouped table-striped']>tbody>tr:first-child>td:nth-child(6)").type("100")
+        cy.get("table[class='o_list_table table table-sm table-hover position-relative mb-0 o_list_table_ungrouped table-striped']>tbody>tr:first-child>td:nth-child(6)").type("10")
         cy.wait(1000)
         cy.xpath("//span[contains(.,'Submit to Layer-1')]").should('have.text', 'Submit to Layer-1')
         cy.xpath("//span[contains(.,'Cancel')]").should('have.text', 'Cancel')
