@@ -47,7 +47,7 @@ describe("mrr(qc)_testsuite", function(){
 
         cy.xpath("//span[contains(.,'Orders')]").click()
         cy.wait(1000)
-        cy.xpath("//a[contains(.,'Agreeement')]").click() // To-Do: `Agreement` ~ Spelling Error
+        cy.xpath("//a[contains(.,'Agreement')]").click() 
         cy.wait(1000)
         cy.xpath("(//button[contains(.,'New')])[2]").click()         //New 
         cy.wait(1000)
