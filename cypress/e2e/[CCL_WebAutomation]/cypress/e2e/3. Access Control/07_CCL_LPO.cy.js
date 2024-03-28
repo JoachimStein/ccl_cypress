@@ -1,7 +1,7 @@
 describe("Local_Purchase_access_right", function () {
     const user_ids = [
     {
-        userName: "hod.user",
+        userName: "scm.user",
         role: "SCM Initiator"
     },
     {
@@ -39,8 +39,22 @@ describe("Local_Purchase_access_right", function () {
                 cy.get("#notesheet_id_0").click()
                 cy.get("#notesheet_id_0").type('NS000').type('{Enter}')  // Notesheet
                 cy.wait(1000)
-                
+                // cy.get("#partner_id_0").type("DreamIT Ltd").type('{Enter}') // CS
+                // cy.wait(1000)
+                // cy.get("#rfq_id_0").type("RFQ/00").type('{Enter}')
+                // cy.wait(1000)
+                // cy.get("#cs_ids_0").type("CS-2024").type('{Enter}')
+                // cy.wait(1000)
+                // cy.get("#purchase_request_id_0").type("PR/00").type("{Enter}")  // Agreement
+                // cy.wait(1000)
+                // cy.get("#partner_id_0").type("DreamIT Ltd").type('{Enter}')
+                // cy.wait(1000)
+                // cy.get("#agreement_id_0").type("VA00").type('{Enter}')
+                // cy.wait(1000)
+                cy.get("table[class='o_section_and_note_list_view o_list_table table table-sm table-hover position-relative mb-0 o_list_table_ungrouped table-striped']>tbody>tr:first-child>td:nth-child(7)").type("1")
+                cy.wait(1000)
                 cy.xpath("//span[contains(.,'Cancel')]").should('have.text', 'Cancel')
+                cy.wait(500)
                 cy.xpath("(//span[contains(.,'Submit')])[1]").should('have.text', 'Submit').click()
                 cy.wait(1000)       
             }
@@ -48,12 +62,14 @@ describe("Local_Purchase_access_right", function () {
             if (userIndex === 1) {
                 cy.get("table[class='o_list_table table table-sm table-hover position-relative mb-0 o_list_table_ungrouped table-striped']>tbody>tr:first-child>td:nth-child(2)").click()
                 cy.wait(1000)
+                cy.xpath("//span[contains(.,'Cancel')]").should('have.text', 'Cancel')
+                cy.wait(500)
                 cy.xpath("//span[contains(.,'Confirm Order')]").should('have.text', 'Confirm Order').click()
                 cy.wait(500)
                 cy.xpath("(//span[contains(.,'Amendment')])[1]").should('have.text','Amendment')
                 cy.wait(500)
                 cy.xpath("//span[contains(.,'Close')]").should('have.text', 'Close')
-
+                cy.wait(500)
             }
         })
     })
