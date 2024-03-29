@@ -1,4 +1,4 @@
-describe("MRR_access_right", function () {
+describe("MRR(QC)_access_right_pre-stage", function () {
     const mrr_user_ids = [
         {
             userName: "mrr.init.user",
