@@ -39,16 +39,16 @@ describe("MRR_access_right_pre-stage", function () {
                 cy.wait(2000)
                 cy.xpath("(//button[contains(.,'New')])[2]").click()         //New 
                 cy.wait(1000)
-                cy.get("#mrr_type_0").select('Foreign')         //MRR Type Select
+                cy.get("#mrr_type_0").select('Local')         //MRR Type Select
                 cy.wait(1000)
-                // cy.get("#purchase_order_id_0").click()      // Direct and Local
-                // cy.wait(500)
-                // cy.get("#purchase_order_id_0").type('{Enter}')
-                // cy.wait(500)
-                cy.get("#ci_id_0").click()  // Foreign
+                cy.get("#purchase_order_id_0").click()      // Direct and Local
                 cy.wait(500)
-                cy.get("#ci_id_0").type('{Enter}')
-                cy.wait(1000)
+                cy.get("#purchase_order_id_0").type('{Enter}')
+                cy.wait(500)
+                // cy.get("#ci_id_0").click()  // Foreign
+                // cy.wait(500)
+                // cy.get("#ci_id_0").type('{Enter}')
+                // cy.wait(1000)
                 cy.xpath("//span[contains(.,'Cancel')]").should('have.text', 'Cancel')
                 cy.wait(500)
                 cy.xpath("(//span[contains(.,'Send For Review')])[1]").should('have.text', 'Send For Review').click()

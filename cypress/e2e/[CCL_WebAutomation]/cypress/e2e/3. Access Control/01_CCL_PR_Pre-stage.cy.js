@@ -45,7 +45,7 @@ user_ids.forEach((user, index) => {
         if (userIndex === 0) {
             cy.xpath("(//button[contains(.,'New')])[2]").click()
             cy.wait(1000)
-            cy.get("#requisition_type_0").select("Direct Purchase") // Purchase Type
+            cy.get("#requisition_type_0").select("Local Purchase") // Purchase Type
             cy.wait(1000)
             cy.get("#department_id_0").type("Procurement").type('{Enter}') // Department 
             cy.wait(1000)
@@ -55,13 +55,13 @@ user_ids.forEach((user, index) => {
             cy.wait(1000)
             cy.xpath("//a[contains(.,'Add a line')]").click()
             cy.wait(1000)
-            cy.get("table.o_list_table>tbody>tr:first-child>td:first-child").type("Small Umbrella") // Product
+            cy.get("table.o_list_table>tbody>tr:first-child>td:first-child").type("Alumina Cement:7321") // Product
             cy.wait(1000)
             cy.get("table.o_list_table>tbody>tr:first-child>td:nth-child(3)").click() // Budget
             cy.wait(500)
             cy.get("table.o_list_table>tbody>tr:first-child>td:nth-child(3)").type('{Enter}') // Budget
             cy.wait(1000)
-            cy.get("table.o_list_table>tbody>tr:first-child>td:nth-child(5)").type("15") // Quantity
+            cy.get("table.o_list_table>tbody>tr:first-child>td:nth-child(5)").type("10") // Quantity
             cy.wait(1000)
             cy.xpath("//span[contains(.,'Submit')]").should('have.text', 'Submit').click()
             cy.wait(1000)
