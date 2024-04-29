@@ -12,7 +12,7 @@ describe("MRR_access_right", function () {
             userName: "mrr.approver.user",
             role: "MRR Approver"
         }
-    ]
+    ];
     
     let userIndex; // Define the userIndex variable outside the forEach loop
 

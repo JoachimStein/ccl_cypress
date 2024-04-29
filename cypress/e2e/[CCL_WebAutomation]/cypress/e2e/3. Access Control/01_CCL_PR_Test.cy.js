@@ -45,7 +45,7 @@ user_ids.forEach((user, index) => {
         if (userIndex === 0) {
             cy.xpath("(//button[contains(.,'New')])[2]").click()
             cy.wait(1000)
-            cy.get("#requisition_type_0").select("Foreign Purchase") // Purchase Type
+            cy.get("#requisition_type_0").select("Local Purchase") // Purchase Type
             cy.wait(1000)
             cy.get("#department_id_0").type("DevOps").type('{Enter}') // Department 
             cy.wait(1000)
@@ -55,14 +55,14 @@ user_ids.forEach((user, index) => {
             cy.wait(1000)
             cy.xpath("//a[contains(.,'Add a line')]").click()
             cy.wait(1000)
-            cy.get("table.o_list_table>tbody>tr:first-child>td:first-child").type("Confidence Cement") // Product
+            cy.get("table.o_list_table>tbody>tr:first-child>td:first-child").type("CCL Test product 1") // Product
             cy.wait(1000)
-            cy.get("table.o_list_table>tbody>tr:first-child>td:nth-child(5)").type("10,000") // Quantity
+            cy.get("table.o_list_table>tbody>tr:first-child>td:nth-child(5)").type("2") // Quantity
             cy.wait(1000)
             cy.xpath("//span[contains(.,'Submit')]").should('have.text', 'Submit').click()
             cy.wait(1000)
         }
-
+        
         if (userIndex === 1) {
             cy.get("table[class='o_list_table table table-sm table-hover position-relative mb-0 o_list_table_ungrouped table-striped']>tbody>tr:first-child>td:nth-child(2)").click()
             cy.wait(1000)

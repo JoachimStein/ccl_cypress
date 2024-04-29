@@ -1,13 +1,13 @@
 describe("RFQ_access_right", function () {
     const user_ids = [
-    // {
-    //     userName: "scm.user",
-    //     role: "SCM Initiator"
-    // },
     {
-        userName: "shod.user",
-        role: "SCM-HOD"
+        userName: "scm.user",
+        role: "SCM Initiator"
     }
+    // {
+    //     userName: "shod.user",
+    //     role: "SCM-HOD"
+    // }
 ];
     let userIndex; // Define the userIndex variable outside the forEach loop
 
@@ -40,12 +40,12 @@ describe("RFQ_access_right", function () {
                 cy.wait(1000)
                 // cy.get("table[class='o_list_table table table-sm table-hover position-relative mb-0 o_list_table_ungrouped table-striped']>tbody>tr:nth-child(2)>td:nth-child(7)").type('60')
                 // cy.wait(1000)
+                cy.xpath("//span[contains(.,'Cancel')]").should('have.text', 'Cancel')
+                cy.wait(500)
                 cy.xpath("(//span[contains(.,'Confirm')])[1]").should('have.text', 'Confirm')
                 cy.wait(500)
                 cy.xpath("(//span[contains(.,'Confirm')])[1]").click()
                 cy.wait(1000)
-                cy.xpath("//span[contains(.,'Cancel')]").should('have.text', 'Cancel')
-                cy.wait(500)
                 cy.xpath("(//span[contains(.,'Amendment')])[1]").should('have.text', 'Amendment')
                 cy.wait(1000)
                 if (user.userName === 'shod.user') {
@@ -56,8 +56,8 @@ describe("RFQ_access_right", function () {
                 cy.wait(1000)
                 cy.get("#partner_ids_0").type('DreamIT').type('{Enter}')         //Vendor select
                 cy.wait(1000)
-                // cy.get("#partner_ids_0").type('Local Vendor 1').type('{Enter}')         //Vendor select
-                // cy.wait(1000)
+                cy.get("#partner_ids_0").type('Local Vendor 1').type('{Enter}')         //Vendor select
+                cy.wait(1000)
                 cy.xpath("(//span[contains(.,'Create Quotation')])[1]").should('have.text', 'Create Quotation')   //assertion
                 cy.wait(1000)
                 cy.xpath("//span[contains(.,'Cancel')]").should('have.text', 'Cancel')

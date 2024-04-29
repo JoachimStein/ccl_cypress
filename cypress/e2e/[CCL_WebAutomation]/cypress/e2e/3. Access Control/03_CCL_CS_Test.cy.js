@@ -12,7 +12,7 @@ describe("Access Right Check for Comparative Statement", function(){
             username : "md.user",
             role : "Managing Director"
         }
-    ]
+    ];
 
     let userIndex;
 
@@ -69,11 +69,11 @@ describe("Access Right Check for Comparative Statement", function(){
                 cy.xpath("//span[contains(.,'Approve')]").click()          //approved by SCM HOD
                 cy.wait(2000)        
             }
-
+            
             if (userIndex === 2) {
                 cy.get("table[class='o_list_table table table-sm table-hover position-relative mb-0 o_list_table_ungrouped table-striped']>tbody>tr:first-child>td:nth-child(2)").click()
                 cy.wait(1000)
-                cy.xpath("//span[contains(.,'Approve')]").click()          //approved by MD
+                cy.xpath("(//span[contains(.,'Approve')])[2]").click()          //approved by MD
                 cy.wait(1000)
                 cy.xpath("//span[contains(.,'Amendment')]").should('have.text', 'Amendment')   //assertion
                 cy.wait(2000)  

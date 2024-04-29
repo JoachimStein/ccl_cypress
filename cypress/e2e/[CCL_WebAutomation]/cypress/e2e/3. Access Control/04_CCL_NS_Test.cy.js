@@ -12,10 +12,10 @@ describe("Access Right Check for Note sheet", function () {
             username: "md.user",
             role: "Managing Director"
         }
-    ]
+    ];
 
     let userIndex;
-
+    
     user_ids.forEach((user, index) => {
         it(`Note sheet : <User Info> ${user.role}`, function () {
             cy.viewport(1400, 780)
@@ -30,23 +30,23 @@ describe("Access Right Check for Note sheet", function () {
             cy.wait(1000)
             cy.xpath("//span[contains(.,'Orders')]").click()
             cy.wait(1000)
-            cy.xpath("//a[contains(.,'Note sheet')]").click()
+            cy.xpath("(//a[contains(.,'Note sheet')])[2]").click()
             cy.wait(1000)
             userIndex = index
-
+            
             if (userIndex === 0) {
                 cy.xpath("(//button[contains(.,'New')])[2]").click()
                 cy.wait(1000)
-                cy.get("#vendor_id_0").type("Local Vendor 1").type('{Enter}')
-                cy.wait(1000)
-                cy.get("#purchase_request_ids_0").type("PR/00").type('{Enter}')
-                cy.wait(1000)
-                // cy.get("#radio_field_0_rfq").click()
+                // cy.get("#vendor_id_0").type("Local Vendor 1").type('{Enter}')
                 // cy.wait(1000)
-                // cy.get("#rfq_id_0").type("RFQ/00").type('{Enter}')
+                // cy.get("#purchase_request_ids_0").type("PR/2024").type('{Enter}')
                 // cy.wait(1000)
-                // cy.get("#quotation_id_0").type("Q/00").type('{Enter}')
-                // cy.wait(1000)        
+                cy.get("#radio_field_0_rfq").click()
+                cy.wait(1000)
+                cy.get("#rfq_id_0").type("RFQ/2024").type('{Enter}')
+                cy.wait(1000)
+                cy.get("#quotation_id_0").type("Q/2024").type('{Enter}')
+                cy.wait(1000)        
                 cy.get("#currency_id_0").type("BDT").type("{Enter}")
                 cy.wait(1000)
                 cy.get("#subject_0").type("Automated Testing")
