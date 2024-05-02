@@ -1,0 +1,14 @@
+{
+    "PR_Initiator" : {
+        "userName" : "init.user",
+        "password" : "1234"
+    },
+    "PR_HOD" : {
+        "userName" : "hod.user",
+        "password" : "1234"
+    },
+    "PR_GM" : {
+        "userName" : "gm.user",
+        "password" : "1234"
+    }
+}
